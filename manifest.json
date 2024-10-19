@@ -1,6 +1,6 @@
 {
 	"id": "github-sync-bibi",
-	"name": "GitHub Sync",
+	"name": "GitHub Sync Bibi",
 	"version": "1.0.5",
 	"minAppVersion": "0.15.0",
 	"description": "Sync vault to personal GitHub.",
