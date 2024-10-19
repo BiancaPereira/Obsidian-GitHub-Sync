@@ -39,9 +39,6 @@ export default class GHSyncPlugin extends Plugin {
 		};
 		git = simpleGit(simpleGitOptions);
 
-		let os = require("os");
-		let hostname = os.hostname();
-
 		let statusResult = await git.status().catch((e) => {
 			new Notice("Vault is not a Git repo or git binary cannot be found.", 10000);
 			return; })
@@ -50,7 +47,7 @@ export default class GHSyncPlugin extends Plugin {
 		let clean = statusResult.isClean();
 
     	let date = new Date();
-    	let msg = hostname + " " + date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + ":" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    	let msg = "updated valt: " + " " + date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + ":" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
 		// git add .
 		// git commit -m hostname-date-time
